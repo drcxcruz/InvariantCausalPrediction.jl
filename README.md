@@ -34,8 +34,8 @@ A better booster is used to reduce the number of predictors before running the p
 
 ## Install
 
-using Pkg
-Pkg.add("InvariantCausalPrediction")
+    using Pkg
+    Pkg.add("InvariantCausalPrediction")
 
 
 ## Documentation 
@@ -46,25 +46,25 @@ Jupyter lab [Invariant Causal Prediction in Julia:  How Some Are Able Earn More 
 
 ## Example
 
-using InvariantCausalPrediction, Queryverse, DataFrames, CSV
+    using InvariantCausalPrediction, Queryverse, DataFrames
 
-rowtable = OpenML.load(1590)
-dfSalary = DataFrame(rowtable)
+    rowtable = OpenML.load(1590)
+    dfSalary = DataFrame(rowtable)
 
-dfSalary = dfSalary |> 
-    @filter( _.capital_gain != 99999) |>
-    DataFrame
+    dfSalary = dfSalary |> 
+        @filter( _.capital_gain != 99999) |>
+        DataFrame
 
-dfLatinSalary = dfSalary |> 
-    @filter( occursin(r"Peru|Mexico|Dominican-Republic|Haiti|El-Salvador|Puerto-Rico|Columbia|Cuba|Nicaragua|Honduras|Ecuador|Jamaica", _.native_country)) |> 
-    @orderby(_.native_country) |>
-    DataFrame
+    dfLatinSalary = dfSalary |> 
+        @filter( occursin(r"Peru|Mexico|Dominican-Republic|Haiti|El-Salvador|Puerto-Rico|Columbia|Cuba|Nicaragua|Honduras|Ecuador|Jamaica", _.native_country)) |> 
+        @orderby(_.native_country) |>
+        DataFrame
 
-select!(dfSalary, Not([:education, :fnlwgt]))      # using education_num only
+    select!(dfSalary, Not([:education, :fnlwgt]))      # using education_num only
 
-X = select(dfLatinSalary, Not([:class, :native_country]))       
-Y = select(dfLatinSalary, [:class]) 
-E = select(dfLatinSalary, [:native_country]) 
+    X = select(dfLatinSalary, Not([:class, :native_country]))       
+    Y = select(dfLatinSalary, [:class]) 
+    E = select(dfLatinSalary, [:native_country]) 
 
-rLatin = LinearInvariantCausalPrediction!(X, Y, E, α = 0.10)
+    rLatin = LinearInvariantCausalPrediction!(X, Y, E, α = 0.10)
 
