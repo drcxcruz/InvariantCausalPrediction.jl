@@ -27,7 +27,7 @@ June 2020 =#
   
 println("Loading Libraries... This can take a few minutes")
 using Distributed;
-import Hwloc;                               println("Hwloc")
+using  Hwloc;                               println("Hwloc")
 if length(workers()) == 1
     addprocs(Hwloc.num_physical_cores())  # get ready for parallelism
 end 

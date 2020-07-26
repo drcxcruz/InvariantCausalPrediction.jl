@@ -1,7 +1,7 @@
 module InvariantEnvironmentPredictionModule
 
 using Distributed
-import Hwloc
+using Hwloc
 if length(workers()) == 1
     addprocs(Hwloc.num_physical_cores())  # get ready for parallelism
 end
