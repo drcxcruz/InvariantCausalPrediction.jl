@@ -27,8 +27,8 @@ The [MLJ](https://alan-turing-institute.github.io/MLJTutorials) framework is hea
 A better booster is used to reduce the number of predictors before running the parallel MLJ models.  [XGBoostRegressor](https://github.com/dmlc/XGBoost.jl) is a scalable, portable and Distributed gradient boosting framework.  The XGBooster is highly recommended when running linear ICP to reduce speed and memory usage.  A sophisticated stochastic feature-level Shapley algorithm named [ShapML](https://github.com/nredell/ShapML.jl) is used to reduce the number of predictors before running the nonlinear models in parallel. The nonlinear models are random forests.  Incredible, ShapML does not directly read a dataset but it takes as input a MLJ model which encompasses the dataset.  ShapML uses Monte Carlo samples along the MLJ models to find the important predictors.  ShapML is implemented in Julia and exponential in the number of predictors. 
 
 
-    xgc = @load XGBoostClassifier;
-    xgr = @load XGBoostRegressor;
+    xgc = @load XGBoostClassifier
+    xgr = @load XGBoostRegressor
 
     using ShapML
 
@@ -42,7 +42,7 @@ A better booster is used to reduce the number of predictors before running the p
 
 "In practice, first apply ICP with linear models.  Apply a nonlinear version if all linear models are rejected by linear IPC."
 
-Jupyter lab [Invariant Causal Prediction in Julia:  How Some Are Able Earn More Than 50 Thousands a Year?](https://notes.quantecon.org/submission/)  showcases the Julia 1.4.2 version of IPC.  
+Jupyter lab [Invariant Causal Prediction in Julia:  Why Some Are Able Earn More Than 50 Thousands a Year?](https://notes.quantecon.org/submission/5f1dbefc58e5d00014f9bd6f)  showcases the Julia 1.4.2 version of IPC.  
 
 ## Example
 
