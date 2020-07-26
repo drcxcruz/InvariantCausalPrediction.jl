@@ -1,7 +1,7 @@
 name = "InvariantCausalPrediction"
 uuid = "5fe40f08-422b-4ec7-90aa-ba60e31ac74e"
 authors = ["Clarman Cruz"]
-version = "0.1.0"
+version = "0.1.1"
 
 [compat]
 julia = "1"
