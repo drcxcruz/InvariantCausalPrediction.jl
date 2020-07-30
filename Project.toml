@@ -33,7 +33,6 @@ VegaLite = "112f6efa-9a02-5b7d-90c0-432ed331239a"
 XGBoost = "009559a3-9522-5dbb-924b-0b6ed2b22bb9"
 
 [compat]
-julia = "1"
 CSV = "^0.7.4"
 CategoricalArrays = "^0.8.1"
 Clustering = "^0.14.1"
@@ -54,13 +53,14 @@ MLJModels = "^0.11.2"
 Missings = "^0.4.3"
 ParallelKMeans = "^0.1.8"
 PrettyPrinting = "^0.2.0"
-Query = "^0.12.2"
+Query = "^0.12.2, 1.0"
 Queryverse = "^0.6.1"
 ShapML = "^0.3.0"
 StatsBase = "^0.33.0"
 Tables = "^1.0.4"
 VegaLite = "^2.2.0"
 XGBoost = "^1.1.1"
+julia = "1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
