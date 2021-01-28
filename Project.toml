@@ -33,7 +33,7 @@ VegaLite = "112f6efa-9a02-5b7d-90c0-432ed331239a"
 XGBoost = "009559a3-9522-5dbb-924b-0b6ed2b22bb9"
 
 [compat]
-CSV = "^0.7.4"
+CSV = "^0.7.4, 0.8"
 CategoricalArrays = "^0.8.1, 0.9"
 Clustering = "^0.14.1"
 Combinatorics = "^1.0.2"
